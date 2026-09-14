@@ -82,8 +82,8 @@
 .nav__link.nav__link--contact:hover,
 .nav__link.nav__link--contact.active-link {
   color: var(--color-white);
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .nav__toggle,
