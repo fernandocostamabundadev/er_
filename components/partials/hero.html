@@ -1,0 +1,61 @@
+<!-- ============================================
+     PARTIAL / HERO
+     Secção de abertura — imagem de fundo + CTA
+     ============================================ -->
+
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <!-- FUNDO (decorativo, ignorado por leitores de ecrã) -->
+  <div class="hero__bg" aria-hidden="true">
+    <picture>
+      <source srcset="./components/assets/img/hero/hero-bg.webp" type="image/webp" />
+      <img
+        src="./components/assets/img/hero/hero-bg.webp"
+        alt=""
+        class="hero__img"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </picture>
+  </div>
+
+  <!-- OVERLAY (gradiente escuro) -->
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="hero__container container">
+    <div class="hero__content">
+      <span class="hero__badge">
+        <i class="ri-graduation-cap-line" aria-hidden="true"></i>
+        Centro de Explicações
+      </span>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-highlight">NOVA</span> GERAÇÃO
+      </h1>
+
+      <p class="hero__subtitle hero__subtitle--animated" aria-label="Aprenda hoje, transforme o amanhã.">
+        <span class="hero__subtitle-line hero__subtitle-line--first">Aprenda hoje</span>
+        <span class="hero__subtitle-line hero__subtitle-line--second">Transforme o amanhã</span>
+      </p>
+
+      <p class="hero__description">
+        Centro de Explicações dedicado a preparar alunos para o sucesso
+        académico. Aulas personalizadas, presenciais e online para todas as
+        disciplinas e níveis de ensino.
+      </p>
+
+      <div class="hero__buttons">
+        <a href="#contact" class="btn btn--primary btn--pulse hero__cta">
+          Inscreva-se Agora
+          <i class="ri-arrow-right-line" aria-hidden="true"></i>
+        </a>
+        <a href="#classes" class="btn btn--secondary hero__cta">
+          Conheça as Classes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

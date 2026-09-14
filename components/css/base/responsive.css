@@ -1,0 +1,87 @@
+/* ============================================
+   BASE / RESPONSIVE (global)
+   Breakpoints: 479 / 767 / 991 / 1199
+   ============================================ */
+
+/* ---------- ≥ 1200px: nada a fazer, é o default ---------- */
+
+/* ---------- ≤ 991px (tablet) ---------- */
+@media (max-width: 991px) {
+  :root {
+    --container-padding: var(--space-3);
+  }
+  .section {
+    padding-block: var(--space-10);
+  }
+}
+
+/* ---------- ≤ 767px (mobile landscape) ---------- */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .section {
+    padding-block: var(--space-8);
+  }
+  .section__header {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+  .hero__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero__buttons .btn {
+    width: 100%;
+  }
+
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: var(--space-2);
+    right: var(--space-2);
+  }
+}
+
+/* ---------- ≤ 479px (mobile portrait) ---------- */
+@media (max-width: 479px) {
+  :root {
+    --container-padding: var(--space-2);
+  }
+
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- PRINT ---------- */
+@media print {
+  .header,
+  .whatsapp-float,
+  .nav {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-6) 0;
+  }
+  .hero__bg,
+  .hero__overlay {
+    display: none;
+  }
+  .hero__title,
+  .hero__subtitle,
+  .hero__description {
+    color: var(--color-dark);
+    text-shadow: none;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}

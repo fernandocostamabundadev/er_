@@ -1,0 +1,111 @@
+<!-- ============================================
+     PARTIAL / ABOUT
+     Sobre + imagem + 3 cards (Visão, Valores, Missão)
+     ============================================ -->
+
+<section class="about section" id="about" aria-labelledby="about-title">
+  <div class="about__container container">
+    <!-- CABEÇALHO DA SECÇÃO -->
+    <div class="about__header">
+      <span class="section__subtitle">Quem somos</span>
+      <h2 class="section__title" id="about-title">
+        SOBRE A <span>NOVA GERAÇÃO</span>
+      </h2>
+      <p class="section__description">
+        Um espaço dedicado ao ensino de qualidade, onde cada aluno recebe
+        atenção personalizada para alcançar o seu máximo potencial.
+      </p>
+    </div>
+
+    <!-- CONTEÚDO: TEXTO + IMAGEM -->
+    <div class="about__content">
+      <!-- TEXTO -->
+      <div class="about__data">
+        <p class="about__description">
+          O <strong>Centro de Explicações Nova Geração</strong> nasceu do
+          compromisso de oferecer acompanhamento académico de excelência em
+          Matola. Com uma equipa de professores experientes e apaixonados pelo
+          ensino, apoiamos alunos de todos os níveis — da 1ª à 12ª classe — e
+          preparamos candidatos para exames de admissão.
+        </p>
+        <p class="about__description">
+          Acreditamos que cada aluno tem um ritmo próprio. Por isso, trabalhamos
+          com turmas reduzidas, planos personalizados e acompanhamento contínuo
+          dos resultados.
+        </p>
+
+        <!-- STATS -->
+        <ul class="about__stats" role="list">
+          <li class="about__stat">
+            <span class="about__stat-number">500+</span>
+            <span class="about__stat-label">Alunos Apoiados</span>
+          </li>
+          <li class="about__stat">
+            <span class="about__stat-number">98%</span>
+            <span class="about__stat-label">Taxa de Aprovação</span>
+          </li>
+          <li class="about__stat">
+            <span class="about__stat-number">15+</span>
+            <span class="about__stat-label">Anos de Experiência</span>
+          </li>
+          <li class="about__stat">
+            <span class="about__stat-number">10+</span>
+            <span class="about__stat-label">Professores Qualificados</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- IMAGEM -->
+      <figure class="about__image">
+        <picture>
+          <!-- Temporário: substituir por components/assets/img/about/about-1.webp -->
+          <source srcset="./components/assets/img/hero/hero-bg.webp" type="image/webp" />
+          <img
+            src="./components/assets/img/hero/hero-bg.webp"
+            alt="Alunos do Centro de Explicações Nova Geração em aula"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="600"
+          />
+        </picture>
+      </figure>
+    </div>
+
+    <!-- 3 CARDS: VISÃO / VALORES / MISSÃO -->
+    <div class="about__cards">
+      <article class="about__card">
+        <div class="about__card-icon" aria-hidden="true">
+          <i class="ri-eye-line"></i>
+        </div>
+        <h3 class="about__card-title">Visão</h3>
+        <p class="about__card-text">
+          Ser a referência em explicações na Matola, reconhecida pela qualidade
+          do ensino e pelo sucesso dos nossos alunos.
+        </p>
+      </article>
+
+      <article class="about__card">
+        <div class="about__card-icon" aria-hidden="true">
+          <i class="ri-heart-3-line"></i>
+        </div>
+        <h3 class="about__card-title">Valores</h3>
+        <p class="about__card-text">
+          Rigor, respeito, dedicação e proximidade. Acreditamos que aprender
+          exige confiança — e construímos isso todos os dias.
+        </p>
+      </article>
+
+      <article class="about__card">
+        <div class="about__card-icon" aria-hidden="true">
+          <i class="ri-flag-2-line"></i>
+        </div>
+        <h3 class="about__card-title">Missão</h3>
+        <p class="about__card-text">
+          Acompanhar cada aluno com atenção personalizada, preparando-o para os
+          desafios académicos e para a vida.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

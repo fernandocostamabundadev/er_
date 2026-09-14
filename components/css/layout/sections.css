@@ -1,0 +1,41 @@
+/* ============================================
+   LAYOUT / SECTIONS
+   Estrutura comum a todas as secções
+   ============================================ */
+
+.section {
+  padding-block: var(--space-12);
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: var(--space-4);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.section__subtitle {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.section__title {
+  font-size: clamp(2rem, 4vw, var(--fs-5xl));
+  font-weight: var(--fw-black);
+  margin-bottom: var(--space-3);
+}
+
+.section__title span {
+  color: var(--color-primary);
+}
+
+.section__description {
+  font-size: var(--fs-lg);
+  color: var(--color-gray-600);
+  margin-inline: auto;
+}

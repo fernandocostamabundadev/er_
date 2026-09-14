@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-MZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Centro de Explicações Nova Geração — Matola</title>
+    <meta
+      name="description"
+      content="Centro de Explicações Nova Geração em Matola. Aulas de todas as disciplinas, preparação para exames e cursos de Inglês e Russo. Inscreva-se via WhatsApp."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Centro de Explicações Nova Geração" />
+    <meta
+      property="og:description"
+      content="Aprender hoje, transformar o amanhã."
+    />
+    <meta property="og:image" content="./components/assets/img/hero/hero-bg.webp" />
+    <meta property="og:locale" content="pt_MZ" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Centro de Explicações Nova Geração" />
+    <meta
+      name="twitter:description"
+      content="Aprender hoje, transformar o amanhã."
+    />
+    <meta name="twitter:image" content="./components/assets/img/hero/hero-bg.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./components/assets/img/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="./components/assets/img/icons/apple-touch-icon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#a37a57" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./components/css/style.css" />
+
+    <!-- GSAP -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+
+    <!-- App -->
+    <script defer type="module" src="./components/js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- Skip link (acessibilidade) -->
+    <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+
+    <!-- Header (componente) -->
+    <div data-component="header"></div>
+
+    <!-- Conteúdo principal -->
+    <main id="main">
+      <div data-component="hero"></div>
+      <div data-component="about"></div>
+      <div data-component="services"></div>
+      <div data-component="classes"></div>
+      <div data-component="team"></div>
+      <div data-component="testimonials"></div>
+      <div data-component="contact"></div>
+    </main>
+
+    <!-- Footer (componente) -->
+    <div data-component="footer"></div>
+  </body>
+</html>

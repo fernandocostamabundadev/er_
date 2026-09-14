@@ -1,0 +1,17 @@
+{
+  "name": "Centro de Explicações Nova Geração",
+  "short_name": "Nova Geração",
+  "lang": "pt-MZ",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#a37a57",
+  "background_color": "#f5efe6",
+  "icons": [
+    {
+      "src": "./components/assets/img/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
