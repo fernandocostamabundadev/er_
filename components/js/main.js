@@ -9,7 +9,6 @@ import { initForm } from "./modules/form.js";
 import { initHeaderScroll } from "./modules/header-scroll.js";
 import { loadComponents } from "./modules/loader.js";
 import { initMenuMobile } from "./modules/menu-mobile.js";
-import { initSmoothScroll } from "./modules/smooth-scroll.js";
 import { initTestimonials } from "./modules/testimonials.js";
 
 (async function bootstrap() {
@@ -20,7 +19,6 @@ import { initTestimonials } from "./modules/testimonials.js";
   initMenuMobile();
   initHeaderScroll();
   initActiveLink();
-  initSmoothScroll();
   initForm();
   initTestimonials();
   initFooterYear();

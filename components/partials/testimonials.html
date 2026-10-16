@@ -23,6 +23,7 @@
       role="region"
       aria-roledescription="carrossel"
       aria-label="Depoimentos de alunos e encarregados"
+      id="testimonials-slider"
       data-reveal
     >
       <!-- CONTROLO: PREV -->
@@ -36,7 +37,12 @@
       </button>
 
       <!-- TRACK -->
-      <div class="testimonials__track" data-testimonial-track aria-live="polite">
+      <div
+        class="testimonials__track"
+        id="testimonials-track"
+        data-testimonial-track
+        aria-live="polite"
+      >
         <!-- SLIDE 1 -->
         <article
           class="testimonials__slide is-active"
@@ -69,23 +75,7 @@
             </blockquote>
 
             <footer class="testimonials__author">
-              <figure class="testimonials__avatar">
-                <picture>
-                  <!-- Temporário: substituir por components/assets/img/testimonials/person-1.webp -->
-                  <source
-                    srcset="./components/assets/img/hero/hero-bg.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./components/assets/img/hero/hero-bg.webp"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="80"
-                    height="80"
-                  />
-                </picture>
-              </figure>
+              <span class="testimonials__avatar" aria-hidden="true">AC</span>
               <div class="testimonials__author-info">
                 <cite class="testimonials__author-name">Amélia Chirindza</cite>
                 <span class="testimonials__author-role">
@@ -129,23 +119,7 @@
             </blockquote>
 
             <footer class="testimonials__author">
-              <figure class="testimonials__avatar">
-                <picture>
-                  <!-- Temporário: substituir por components/assets/img/testimonials/person-2.webp -->
-                  <source
-                    srcset="./components/assets/img/hero/hero-bg.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./components/assets/img/hero/hero-bg.webp"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="80"
-                    height="80"
-                  />
-                </picture>
-              </figure>
+              <span class="testimonials__avatar" aria-hidden="true">EM</span>
               <div class="testimonials__author-info">
                 <cite class="testimonials__author-name">Edson Macuácua</cite>
                 <span class="testimonials__author-role">
@@ -189,23 +163,7 @@
             </blockquote>
 
             <footer class="testimonials__author">
-              <figure class="testimonials__avatar">
-                <picture>
-                  <!-- Temporário: substituir por components/assets/img/testimonials/person-3.webp -->
-                  <source
-                    srcset="./components/assets/img/hero/hero-bg.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./components/assets/img/hero/hero-bg.webp"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="80"
-                    height="80"
-                  />
-                </picture>
-              </figure>
+              <span class="testimonials__avatar" aria-hidden="true">TN</span>
               <div class="testimonials__author-info">
                 <cite class="testimonials__author-name">Telma Ndlovu</cite>
                 <span class="testimonials__author-role">
@@ -249,23 +207,7 @@
             </blockquote>
 
             <footer class="testimonials__author">
-              <figure class="testimonials__avatar">
-                <picture>
-                  <!-- Temporário: substituir por components/assets/img/testimonials/person-4.webp -->
-                  <source
-                    srcset="./components/assets/img/hero/hero-bg.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="./components/assets/img/hero/hero-bg.webp"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="80"
-                    height="80"
-                  />
-                </picture>
-              </figure>
+              <span class="testimonials__avatar" aria-hidden="true">JM</span>
               <div class="testimonials__author-info">
                 <cite class="testimonials__author-name">Jorge Matola</cite>
                 <span class="testimonials__author-role">

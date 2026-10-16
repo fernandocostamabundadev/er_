@@ -1,110 +1,89 @@
 /* ============================================
    MODULE / ANIMATIONS
-   GSAP — só corre se gsap existir no window.
+   GSAP reveals with reduced-motion support.
    ============================================ */
 
 export function initAnimations() {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+  const animationEngine = window.gsap;
+  const scrollPlugin = window.ScrollTrigger;
+
+  if (!animationEngine || !scrollPlugin) {
     console.warn("[animations] GSAP não carregado — a saltar.");
     return;
   }
 
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  gsap.registerPlugin(ScrollTrigger);
+  animationEngine.registerPlugin(scrollPlugin);
 
-  // HERO (entrada imediata)
-  gsap.from(".hero__badge", {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    ease: "power3.out",
-  });
-  gsap.from(".hero__title", {
-    opacity: 0,
-    y: 60,
-    duration: 1.0,
-    delay: 0.1,
-    ease: "power3.out",
-  });
-  gsap.from(".hero__subtitle", {
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-  gsap.from(".hero__description", {
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    delay: 0.45,
-    ease: "power3.out",
-  });
-  // ABOUT
-  gsap.from(".about__data", {
-    scrollTrigger: { trigger: ".about", start: "top 80%" },
-    opacity: 0,
-    y: 50,
-    duration: 1,
-  });
-  gsap.from(".about__stat", {
-    scrollTrigger: { trigger: ".about__stats", start: "top 85%" },
-    opacity: 0,
-    y: 20,
-    duration: 0.6,
-    stagger: 0.1,
+  const intro = animationEngine.timeline({
+    defaults: { ease: "power3.out", duration: 0.75 },
   });
 
-  // SERVICES
-  gsap.from(".services__card", {
-    scrollTrigger: { trigger: ".services", start: "top 80%" },
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    stagger: 0.15,
-  });
+  intro
+    .from(".hero__badge", { autoAlpha: 0, y: 18 })
+    .from(".hero__title", { autoAlpha: 0, y: 28 }, "-=0.5")
+    .from(".hero__subtitle", { autoAlpha: 0, y: 18 }, "-=0.48")
+    .from(".hero__description", { autoAlpha: 0, y: 18 }, "-=0.45")
+    .fromTo(
+      ".hero__buttons .btn",
+      { autoAlpha: 0, y: 14 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.72,
+        ease: "power3.out",
+        stagger: 0.1,
+        clearProps: "opacity,transform,visibility",
+        immediateRender: false,
+      },
+      "-=0.4",
+    );
 
-  // CLASSES
-  gsap.from(".classes__item", {
-    scrollTrigger: { trigger: ".classes", start: "top 80%" },
-    opacity: 0,
-    y: 30,
-    duration: 0.7,
-    stagger: 0.12,
-  });
-  gsap.from(".classes__course-item", {
-    scrollTrigger: { trigger: ".classes__courses", start: "top 85%" },
-    opacity: 0,
-    y: 30,
-    duration: 0.7,
-    stagger: 0.15,
-  });
+  const reveals = [
+    { trigger: ".about", targets: ".about__header, .about__content" },
+    { trigger: ".about__cards", targets: ".about__card", stagger: 0.12 },
+    { trigger: ".services", targets: ".services__card", stagger: 0.12 },
+    { trigger: ".services__cta", targets: ".services__cta" },
+    { trigger: ".classes", targets: ".classes__item", stagger: 0.1 },
+    {
+      trigger: ".classes__courses",
+      targets: ".classes__course-item",
+      stagger: 0.1,
+    },
+    { trigger: ".team", targets: ".team__member", stagger: 0.1 },
+    {
+      trigger: ".testimonials",
+      targets: ".testimonials__slider, .testimonials__cta",
+      stagger: 0.1,
+    },
+    {
+      trigger: ".contact",
+      targets: ".contact .section__header, .contact__card, .contact__detail",
+      stagger: 0.1,
+    },
+    { trigger: ".footer", targets: ".footer__container" },
+  ];
 
-  // TEAM
-  gsap.from(".team__member", {
-    scrollTrigger: { trigger: ".team", start: "top 80%" },
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    stagger: 0.15,
-  });
+  reveals.forEach(({ trigger, targets, stagger = 0 }) => {
+    if (!document.querySelector(trigger) || !document.querySelector(targets)) return;
 
-  // CONTACT
-  gsap.from(".contact__data, .contact__info", {
-    scrollTrigger: { trigger: ".contact", start: "top 80%" },
-    opacity: 0,
-    y: 30,
-    duration: 0.9,
-    stagger: 0.15,
-  });
-
-  // FOOTER
-  gsap.from(".footer__container", {
-    scrollTrigger: { trigger: ".footer", start: "top 90%" },
-    opacity: 0,
-    y: 30,
-    duration: 0.9,
+    animationEngine.fromTo(
+      targets,
+      { autoAlpha: 0, y: 24 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.72,
+        ease: "power3.out",
+        stagger,
+        clearProps: "opacity,transform,visibility",
+        scrollTrigger: {
+          trigger,
+          start: "top 86%",
+          once: true,
+        },
+      },
+    );
   });
 }

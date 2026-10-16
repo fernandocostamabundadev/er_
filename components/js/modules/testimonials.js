@@ -21,6 +21,7 @@ export function initTestimonials() {
         const active = slideIndex === current;
         slide.classList.toggle("is-active", active);
         slide.setAttribute("aria-hidden", String(!active));
+        slide.setAttribute("aria-labelledby", `${slider.id}-tab-${slideIndex + 1}`);
       });
       [...dots.children].forEach((dot, dotIndex) => {
         const active = dotIndex === current;
@@ -30,11 +31,18 @@ export function initTestimonials() {
       });
     };
 
-    slides.forEach((_, index) => {
+    slides.forEach((slide, index) => {
+      const slideId = `${slider.id}-slide-${index + 1}`;
+      const tabId = `${slider.id}-tab-${index + 1}`;
+      slide.id = slideId;
+      slide.setAttribute("role", "tabpanel");
+
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "testimonials__dot";
+      dot.id = tabId;
       dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-controls", slideId);
       dot.setAttribute("aria-label", `Ver depoimento ${index + 1}`);
       dot.addEventListener("click", () => show(index));
       dots.append(dot);
@@ -42,8 +50,14 @@ export function initTestimonials() {
     previous?.addEventListener("click", () => show(current - 1));
     next?.addEventListener("click", () => show(current + 1));
     slider.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") show(current - 1);
-      if (event.key === "ArrowRight") show(current + 1);
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        show(current - 1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        show(current + 1);
+      }
     });
     show(current);
   });

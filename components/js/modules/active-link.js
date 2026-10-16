@@ -8,20 +8,35 @@ export function initActiveLink() {
   const links = document.querySelectorAll(".nav__link");
   if (!sections.length || !links.length) return;
 
-  const onScroll = () => {
-    const y = window.scrollY + 120;
+  const update = () => {
+    const current = [...sections].reduce((active, section) => {
+      if (section.getBoundingClientRect().top <= 140) return section;
+      return active;
+    }, sections[0]);
 
-    sections.forEach((sec) => {
-      const top = sec.offsetTop;
-      const bottom = top + sec.offsetHeight;
-      const id = sec.id;
-      const link = document.querySelector(`.nav__link[href="#${id}"]`);
-      if (!link) return;
-
-      link.classList.toggle("active-link", y >= top && y < bottom);
+    links.forEach((link) => {
+      const active = link.hash === `#${current.id}`;
+      link.classList.toggle("active-link", active);
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  let scheduled = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        update();
+        scheduled = false;
+      });
+    },
+    { passive: true },
+  );
+  update();
 }

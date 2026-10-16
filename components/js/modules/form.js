@@ -3,11 +3,12 @@
    Validação + envio via WhatsApp (sem backend).
    ============================================ */
 
-const WHATSAPP_NUMBER = "258845384097"; // Matola, Moçambique
+const WHATSAPP_NUMBER = "258849112553";
 
 export function initForm() {
   const form = document.querySelector("#contact-form");
   if (!form) return;
+  const status = document.querySelector("#contact-form-status");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -19,9 +20,11 @@ export function initForm() {
     const mensagem = (data.get("mensagem") || "").toString().trim();
 
     if (!nome || !classe) {
-      alert("Preenche o nome e a classe.");
+      if (status) status.textContent = "Preencha o nome e a classe para continuar.";
       return;
     }
+
+    if (status) status.textContent = "";
 
     const texto = encodeURIComponent(
       `Olá! Quero inscrever-me no Centro Nova Geração.\n` +
@@ -31,6 +34,10 @@ export function initForm() {
         `Mensagem: ${mensagem}`,
     );
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`, "_blank");
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${texto}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   });
 }

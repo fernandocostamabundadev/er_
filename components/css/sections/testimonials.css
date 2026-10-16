@@ -14,15 +14,27 @@
 }
 
 .testimonials__track {
+  position: relative;
   overflow: hidden;
 }
 
 .testimonials__slide {
-  display: none;
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal),
+    visibility var(--transition-normal);
 }
 
 .testimonials__slide.is-active {
-  display: block;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .testimonials__card {
@@ -59,13 +71,18 @@
   margin-top: var(--space-4);
 }
 
-.testimonials__avatar,
-.testimonials__avatar img {
+.testimonials__avatar {
+  display: grid;
   width: 56px;
   height: 56px;
+  flex-shrink: 0;
+  place-items: center;
   border-radius: var(--radius-full);
-  object-fit: cover;
-  background: var(--color-gray-200);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
 }
 
 .testimonials__author-name,
@@ -86,14 +103,22 @@
   position: absolute;
   top: 50%;
   z-index: 1;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 0;
   border-radius: var(--radius-full);
   color: var(--color-white);
   background: var(--color-accent);
   cursor: pointer;
   transform: translateY(-50%);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.testimonials__nav:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-50%) scale(1.06);
 }
 
 .testimonials__nav--prev { left: 0; }
@@ -113,17 +138,30 @@
 }
 
 .testimonials__dot {
-  width: 0.7rem;
-  height: 0.7rem;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-full);
-  background: var(--color-gray-300);
+  place-items: center;
+  background: transparent;
   cursor: pointer;
 }
 
-.testimonials__dot.is-active {
+.testimonials__dot::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: var(--radius-full);
+  background: var(--color-gray-300);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.testimonials__dot.is-active::before {
   background: var(--color-accent);
+  transform: scale(1.2);
 }
 
 .testimonials__cta {

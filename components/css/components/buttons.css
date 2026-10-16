@@ -40,17 +40,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-.btn--pulse {
-  animation: cta-pulse 3.2s ease-in-out infinite;
-  will-change: transform, box-shadow;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn--pulse {
-    animation: none;
-  }
-}
-
 .btn--secondary {
   background-color: transparent;
   color: var(--color-white);

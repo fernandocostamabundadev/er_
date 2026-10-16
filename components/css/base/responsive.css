@@ -1,9 +1,12 @@
 /* ============================================
    BASE / RESPONSIVE (global)
-   Breakpoints: 479 / 767 / 991 / 1199
    ============================================ */
 
-/* ---------- ≥ 1200px: nada a fazer, é o default ---------- */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1280px;
+  }
+}
 
 /* ---------- ≤ 991px (tablet) ---------- */
 @media (max-width: 991px) {
@@ -12,6 +15,21 @@
   }
   .section {
     padding-block: var(--space-10);
+  }
+
+  .about__content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
+  .about__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about__card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 32rem);
+    justify-self: center;
   }
 }
 
@@ -24,13 +42,15 @@
   .section {
     padding-block: var(--space-8);
   }
+
+  .about__content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .section__header {
     margin-bottom: var(--space-4);
   }
 
-  .hero {
-    min-height: 90vh;
-  }
   .hero__buttons {
     flex-direction: column;
     align-items: stretch;
@@ -45,6 +65,18 @@
     bottom: var(--space-2);
     right: var(--space-2);
   }
+
+  .contact__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact__detail:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .testimonials__slider {
+    padding-inline: clamp(2.5rem, 8vw, 4rem);
+  }
 }
 
 /* ---------- ≤ 479px (mobile portrait) ---------- */
@@ -53,8 +85,49 @@
     --container-padding: var(--space-2);
   }
 
+  .section__title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
   .about__stats {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+  }
+
+  .about__stat {
+    min-width: 0;
+    padding-left: var(--space-2);
+  }
+
+  .about__stat-number {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .about__stat-label {
+    font-size: var(--fs-xs);
+    letter-spacing: 0.25px;
+  }
+
+  .about__content,
+  .about__cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about__card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .contact__details {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__detail:last-child {
+    grid-column: auto;
+  }
+
+  .testimonials__slider {
+    padding-inline: 0;
   }
 }
 

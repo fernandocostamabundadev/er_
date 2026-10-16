@@ -24,7 +24,15 @@
       </button>
 
       <!-- MENU -->
-      <div class="nav__menu" id="nav-menu">
+      <button
+        type="button"
+        class="nav__backdrop"
+        data-nav-backdrop
+        aria-label="Fechar menu"
+        tabindex="-1"
+        hidden
+      ></button>
+      <div class="nav__menu" id="nav-menu" aria-hidden="true" inert>
         <button
           type="button"
           class="nav__close"
