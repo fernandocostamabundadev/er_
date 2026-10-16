@@ -33,14 +33,13 @@
 
         <div class="contact__map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.4695!2d32.4597!3d-25.9622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU3JzQ0LjAiUyAzMsKwMjcnMzQuOSJF!5e0!3m2!1spt-PT!2smz!4v1700000000000"
-            width="100%"
-            height="260"
+            src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d867.3707812032563!2d32.6451086!3d-25.8347227!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d-25.8348777!2d32.6453627!4m3!3m2!1d-25.834858399999998!2d32.6453627!5e1!3m2!1spt-PT!2smz!4v1792136007270!5m2!1spt-PT!2smz"
+            width="600"
+            height="450"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localização do Centro de Explicações Nova Geração"
+            referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>
 
@@ -128,23 +127,53 @@
         <form id="contact-form" class="contact__form">
           <div class="form__group">
             <label class="form__label" for="contact-nome">Nome</label>
-            <input class="form__input" id="contact-nome" name="nome" type="text" autocomplete="name" required />
+            <input
+              class="form__input"
+              id="contact-nome"
+              name="nome"
+              type="text"
+              autocomplete="name"
+              required
+            />
           </div>
           <div class="contact__form-row">
             <div class="form__group">
               <label class="form__label" for="contact-idade">Idade</label>
-              <input class="form__input" id="contact-idade" name="idade" type="number" min="1" max="100" inputmode="numeric" />
+              <input
+                class="form__input"
+                id="contact-idade"
+                name="idade"
+                type="number"
+                min="1"
+                max="100"
+                inputmode="numeric"
+              />
             </div>
             <div class="form__group">
               <label class="form__label" for="contact-classe">Classe</label>
-              <input class="form__input" id="contact-classe" name="classe" type="text" required />
+              <input
+                class="form__input"
+                id="contact-classe"
+                name="classe"
+                type="text"
+                required
+              />
             </div>
           </div>
           <div class="form__group">
             <label class="form__label" for="contact-mensagem">Mensagem</label>
-            <textarea class="form__textarea" id="contact-mensagem" name="mensagem" rows="3" placeholder="Como podemos ajudar?"></textarea>
+            <textarea
+              class="form__textarea"
+              id="contact-mensagem"
+              name="mensagem"
+              rows="3"
+              placeholder="Como podemos ajudar?"
+            ></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--pulse contact__card-btn">
+          <button
+            type="submit"
+            class="btn btn--primary btn--pulse contact__card-btn"
+          >
             <i class="ri-whatsapp-line" aria-hidden="true"></i>
             Enviar pelo WhatsApp
           </button>

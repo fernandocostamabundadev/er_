@@ -71,6 +71,17 @@
   transition: filter var(--transition-normal);
 }
 
+.team__member-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+}
+
 .team__member:hover .team__member-image img {
   filter: grayscale(0%);
 }
